@@ -4,18 +4,15 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    //if (argc != 2) {
-    //    cerr << "Usage: " << argv[0] << " <input_file>" << endl;
-    //    return 1;
-    //}
+    if (argc != 2) {
+        cerr << "Usage: " << argv[0] << " <input_file>" << endl;
+        return 1;
+    }
 
-    
-    //map<int, int> mapTimeToVisitorAction{ MapTimeToVisitorAction(argv[1])};  // Key: minute, Value: visitor count
-
-    string logFilePath{ "C:\\1\\VisitorTask\\VisitorTask\\visitors 1.txt" };
+    string logFilePath{ argv[1] };
     int maxVisitorCount{ -1 };
     vector<pair<int, int>> maxVisitorRange;
-
+    
     VisitorCounter::FindMaxVisitors(logFilePath, maxVisitorCount, maxVisitorRange);
 
     cout << "Time ranges : " << endl;
